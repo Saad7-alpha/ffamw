@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Noor Forces Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-navy: #001f3f; --secondary-navy: #003366; --accent-blue: #0074D9; --white: #ffffff; --light-gray: #f4f7f6; --text-dark: #333333; --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--light-gray); color: var(--text-dark); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; } ul { list-style: none; } img { max-width: 100%; display: block; }
+        .top-bar { background-color: var(--secondary-navy); color: var(--white); padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+        .top-info span { margin-right: 15px; } .top-social a { margin-left: 10px; color: var(--white); transition: var(--transition); } .top-social a:hover { color: var(--accent-blue); }
+        header { background-color: var(--primary-navy); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; height: 80px; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--white); display: flex; align-items: center; gap: 10px; } .logo i { color: var(--accent-blue); }
+        .nav-links { display: flex; gap: 25px; } .nav-links a { color: var(--white); font-weight: 500; font-size: 0.95rem; text-transform: uppercase; padding: 10px 0; position: relative; transition: var(--transition); }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: var(--accent-blue); transition: var(--transition); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; } .nav-links a:hover { color: var(--accent-blue); }
+        .mobile-toggle { display: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+        .page-header { height: 50vh; background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); }
+        .page-header h1 { font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; }
+        .breadcrumb { margin-top: 15px; font-size: 1rem; } .breadcrumb a { color: var(--accent-blue); }
+        .content-section { padding: 80px 5%; background-color: var(--white); } .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary-navy); margin-bottom: 10px; position: relative; display: inline-block; }
+        .section-title h2::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--accent-blue); margin: 10px auto 0; }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
+        .about-text h3 { color: var(--primary-navy); font-size: 1.8rem; margin-bottom: 20px; }
+        .about-text p { color: #555; margin-bottom: 15px; line-height: 1.8; }
+        .about-image img { border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        footer { background-color: var(--primary-navy); color: var(--white); padding: 60px 5% 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h3 { font-size: 1.4rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-col h3::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background-color: var(--accent-blue); }
+        .footer-col p { color: #ccc; margin-bottom: 15px; font-size: 0.9rem; }
+        .footer-links li { margin-bottom: 10px; } .footer-links a { color: #ccc; transition: var(--transition); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--accent-blue); padding-left: 5px; }
+        .contact-info li { display: flex; gap: 10px; margin-bottom: 15px; color: #ccc; font-size: 0.9rem; }
+        .contact-info i { color: var(--accent-blue); margin-top: 4px; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #888; font-size: 0.85rem; }
+        #scrollTop { position: fixed; bottom: 30px; right: 30px; background-color: var(--accent-blue); color: var(--white); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: var(--transition); z-index: 999; }
+        #scrollTop.show { opacity: 1; visibility: visible; }
+        @media (max-width: 768px) { .top-bar { display: none; } .mobile-toggle { display: block; } .nav-links { position: absolute; top: 80px; left: 0; width: 100%; background-color: var(--primary-navy); flex-direction: column; align-items: center; padding: 20px 0; gap: 20px; transform: translateY(-150%); transition: var(--transition); z-index: 999; } .nav-links.active { transform: translateY(0); } .page-header h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="top-bar"><div class="top-info"><span><i class="fas fa-envelope"></i> info@noorforces.edu.pk</span><span><i class="fas fa-phone-alt"></i> +92 300 1234567</span></div><div class="top-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    <header><nav class="navbar"><a href="index.html" class="logo"><i class="fas fa-shield-alt"></i>NOOR FORCES ACADEMY</a><ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html" class="active">About</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="programs.html">Programs</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul><div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div></nav></header>
+    <section class="page-header"><div class="header-content"><h1>About Us</h1><div class="breadcrumb"><a href="index.html">Home</a> / About Us</div></div></section>
+    <section class="content-section">
+        <div class="section-title"><h2>Who We Are</h2><p>Leading the way in military preparation since 2010</p></div>
+        <div class="about-grid">
+            <div class="about-text"><h3>Welcome to Noor Forces Academy</h3><p>Noor Forces Academy is Pakistan's premier institution dedicated to preparing young men and women for initial tests of Pakistan Armed Forces. With over a decade of excellence, we have established ourselves as the trusted choice for aspiring candidates.</p><p>Our comprehensive approach combines academic rigor, physical training, and psychological preparation to ensure our students are fully equipped to succeed in the competitive selection process.</p></div>
+            <div class="about-image"><img src="https://images.unsplash.com/photo-1579912036026-c8847596a907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About Noor Forces Academy"></div>
+        </div>
+    </section>
+    <footer id="contact"><div class="footer-grid"><div class="footer-col"><h3>Noor Forces Academy</h3><p>Dedicated to producing high-quality candidates for the Pakistan Armed Forces.</p><div class="top-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div class="footer-col"><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="programs.html">Programs</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h3>Contact Us</h3><ul class="contact-info"><li><i class="fas fa-map-marker-alt"></i> Main GT Road, Near Cantt Gate, Rawalpindi, Pakistan</li><li><i class="fas fa-phone"></i> +92 300 1234567</li><li><i class="fas fa-envelope"></i> admissions@noorforces.edu.pk</li><li><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 9:00 PM</li></ul></div></div><div class="copyright"><p>&copy; 2024 Noor Forces Academy. All Rights Reserved.</p></div></footer>
+    <div id="scrollTop"><i class="fas fa-arrow-up"></i></div>
+    <script>const mobileToggle=document.getElementById('mobileToggle');const navLinks=document.getElementById('navLinks');mobileToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');const icon=mobileToggle.querySelector('i');if(navLinks.classList.contains('active')){icon.classList.remove('fa-bars');icon.classList.add('fa-times');}else{icon.classList.remove('fa-times');icon.classList.add('fa-bars');}});document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('active');mobileToggle.querySelector('i').classList.remove('fa-times');mobileToggle.querySelector('i').classList.add('fa-bars');});});const scrollTopBtn=document.getElementById('scrollTop');window.addEventListener('scroll',()=>{if(window.scrollY>300){scrollTopBtn.classList.add('show');}else{scrollTopBtn.classList.remove('show');}});scrollTopBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});</script>
+</body>
+</html>
