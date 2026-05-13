@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fighter Forces Academy: Pakistan Army, Navy, PAF Test Preparation 2026</title>
+    <meta name="description" content="Free online preparation for Pak Army, Navy and PAF initial tests, ISSB, PMA Long Course, Cadet College admissions at Fighter Forces Academy. Practice MCQs, past papers & notes.">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23001f3f'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EFF%3C/text%3E%3C/svg%3E">
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-blue: #001f3f;
+            --navy-light: #003366;
+            --navy-dark: #00152a;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-light: #e2e8f0;
+            --gray: #64748b;
+            --accent-blue: #0066cc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--navy-blue);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 31, 63, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--navy-blue);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--navy-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy-blue);
+        }
+
+        .site-title:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            padding: 10px 15px;
+            display: block;
+            color: var(--navy-blue);
+            font-weight: 500;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: var(--navy-blue);
+            color: var(--white);
+        }
+
+        /* Dropdown Menu */
+        nav ul li ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.2);
+            min-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            flex-direction: column;
+            gap: 0;
+            z-index: 999;
+            border: 1px solid var(--gray-light);
+        }
+
+        nav ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        nav ul li ul li a {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        nav ul li ul li:last-child a {
+            border-bottom: none;
+        }
+
+        nav ul li ul li ul {
+            left: 100%;
+            top: 0;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: var(--navy-blue);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Admission Banner */
+        .admission-banner {
+            background: #cc0000;
+            color: var(--white);
+            text-align: center;
+            padding: 10px 20px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Main Cards Section */
+        .main-cards {
+            padding: 60px 20px;
+            background: var(--off-white);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 31, 63, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 31, 63, 0.2);
+        }
+
+        .card-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--navy-blue), var(--navy-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--white);
+            border: 4px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .card-item:hover .card-icon {
+            border-color: var(--navy-blue);
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy-blue);
+        }
+
+        /* Info Slider Section */
+        .info-slider {
+            padding: 60px 20px;
+            background: var(--white);
+        }
+
+        .slider-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 31, 63, 0.15);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide h2 {
+            color: var(--navy-blue);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .slide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .slide-item {
+            background: var(--off-white);
+            padding: 20px;
+            border-radius: 8px;
+            border-bottom: 3px solid var(--navy-blue);
+            font-weight: 600;
+            color: var(--navy-blue);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #25D366;
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1ebc57;
+            transform: scale(1.05);
+        }
+
+        /* Why Join Section */
+        .why-join {
+            padding: 80px 20px;
+            background: var(--off-white);
+        }
+
+        .why-join-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 31, 63, 0.1);
+            border-left: 6px solid var(--navy-blue);
+            transition: all 0.3s ease;
+        }
+
+        .why-join-content:hover {
+            transform: translateX(10px);
+            border-left-color: var(--accent-blue);
+        }
+
+        .why-join h2 {
+            color: var(--navy-blue);
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .why-join h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-blue);
+            margin-top: 15px;
+        }
+
+        .why-join p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            background: var(--navy-blue);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 31, 63, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-blue);
+            color: var(--white);
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 10px;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--navy-blue);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            font-size: 24px;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 2px;
+            }
+
+            nav ul li a {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 31, 63, 0.1);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            nav ul li a {
+                padding: 15px;
+                border-bottom: 1px solid var(--gray-light);
+            }
+
+            nav ul li ul {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding-left: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .slide-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-join-content {
+                padding: 30px;
+            }
+
+            .why-join h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-main {
+                padding: 10px 15px;
+            }
+
+            .logo {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+
+            .site-title {
+                font-size: 1.2rem;
+            }
+
+            .hero {
+                padding: 50px 15px;
+                margin-top: 70px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .card-item {
+                padding: 20px 10px;
+            }
+
+            .card-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+
+            .slide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--navy-blue);
+            margin-bottom: 50px;
+        }
+
+        .highlight {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Admission Banner -->
+    <div class="admission-banner">
+        🚨 Admissions Open for Next Session: Join us for cadet colleges test preparation on First May 2026 🚨
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-main">
+            <div class="logo-section">
+                <div class="logo">FF</div>
+                <a href="#" class="site-title">Fighter Forces Academy</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Join Army ▼</a>
+                        <ul>
+                            <li><a href="#">PMA Long Course</a></li>
+                            <li><a href="#">Technical Cadet Course</a></li>
+                            <li><a href="#">Armed Forces Nursing Services</a></li>
+                            <li><a href="#">Army Medical Corps</a></li>
+                            <li><a href="#">Direct Short Service Commission</a></li>
+                            <li><a href="#">Lady Cadet Course</a></li>
+                            <li><a href="#">Army Education Officers</a></li>
+                            <li><a href="#">EME Officers</a></li>
+                            <li><a href="#">Army Legal Branch</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Join Navy ▼</a>
+                        <ul>
+                            <li><a href="#">Navy PC Officers</a></li>
+                            <li><a href="#">Navy Officers SSC</a></li>
+                            <li><a href="#">Navy M Cadet</a></li>
+                            <li><a href="#">General Sailors</a></li>
+                            <li><a href="#">Technical Sailors</a></li>
+                            <li><a href="#">Marine Sailors</a></li>
+                            <li><a href="#">Navy Civilian Jobs</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Join PAF ▼</a>
+                        <ul>
+                            <li><a href="#">General Duty Pilot (GDP)</a></li>
+                            <li><a href="#">Aeronautical Engineering</a></li>
+                            <li><a href="#">Air Defence Branch</a></li>
+                            <li><a href="#">Engineering Branch</a></li>
+                            <li><a href="#">Legal Branch</a></li>
+                            <li><a href="#">Account Branch</a></li>
+                            <li><a href="#">Logistic Branch</a></li>
+                            <li><a href="#">Education Branch</a></li>
+                            <li><a href="#">Medical Officers</a></li>
+                            <li><a href="#">IT Branch</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">ISSB ▼</a>
+                        <ul>
+                            <li><a href="#">Complete ISSB Test Guide</a></li>
+                            <li><a href="#">Psychological Tests</a></li>
+                            <li><a href="#">Group Testing Officer Tests</a></li>
+                            <li><a href="#">Interview Questions</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Colleges</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="#">PDFs</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Free Online Preparation for Pak Army, Navy and PAF Tests 2026</h1>
+            <p>Whether you aim to serve in the <strong>Pakistani Armed Forces</strong>, <strong>Civil Services</strong>, <strong>Cadet Colleges</strong> or pursue a career in leadership, Fighter Forces Academy is the first step towards achieving your goals.</p>
+        </div>
+    </section>
+
+    <!-- Main Cards Section -->
+    <section class="main-cards">
+        <div class="cards-grid">
+            <a href="#" class="card-item">
+                <div class="card-icon">🎖️</div>
+                <h3 class="card-title">Join Pak Army</h3>
+            </a>
+            <a href="#" class="card-item">
+                <div class="card-icon">⚓</div>
+                <h3 class="card-title">Join Pak Navy</h3>
+            </a>
+            <a href="#" class="card-item">
+                <div class="card-icon">✈️</div>
+                <h3 class="card-title">Join Pak Air Force</h3>
+            </a>
+            <a href="#" class="card-item">
+                <div class="card-icon">📋</div>
+                <h3 class="card-title">ISSB Tests</h3>
+            </a>
+            <a href="#" class="card-item">
+                <div class="card-icon">🏫</div>
+                <h3 class="card-title">Cadet Colleges</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Info Slider Section -->
+    <section class="info-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <h2>Welcome to Fighter Forces Academy</h2>
+                <p>Prep for Sargodha, Jhelum, Hasanabdal, Lower Topa, Ormara & SUI</p>
+                <div class="slide-item" style="background: var(--navy-blue); color: white; display: inline-block; margin-top: 20px; border: none;">
+                    New Session Starts: 1st of Every Month
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Core Subjects</h2>
+                <div class="slide-grid">
+                    <div class="slide-item">🧠 Intelligence</div>
+                    <div class="slide-item">📚 English</div>
+                    <div class="slide-item">➗ Mathematics</div>
+                    <div class="slide-item">🔬 Science</div>
+                    <div class="slide-item">✍️ Urdu</div>
+                    <div class="slide-item">🎤 Interview</div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Expert Mentors</h2>
+                <p>Retired Forces Officers Team</p>
+                <div class="slide-grid">
+                    <div class="slide-item">Personality Profiling</div>
+                    <div class="slide-item">Weekly Mock Tests</div>
+                    <div class="slide-item">Google Meet Classes</div>
+                    <div class="slide-item" style="grid-column: span 3; background: var(--navy-blue); color: white;">📝 Free Online Practice Tests</div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Join Now</h2>
+                <p>3 Months Course | 10,000 PKR/Month</p>
+                <p style="color: #1e5631; font-weight: 800; margin-top: 15px;">🎁 10% DISCOUNT ON FULL ADVANCE PAYMENT</p>
+                <a href="https://wa.me/923348480890" class="cta-button" target="_blank">📲 Contact at WhatsApp: 03348480890</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="why-join">
+        <div class="why-join-content">
+            <h2>Why to Join Fighter Forces Academy?</h2>
+            <p>
+                With years of success in preparing cadets for entry into the <strong>Pakistani Armed Forces</strong> and other elite institutions, Fighter Forces Academy has built a strong reputation for excellence. Our alumni have gone on to become successful officers, leaders, and role models in various sectors. The Fighter Forces Academy legacy is one of pride, dedication, and achievement.
+            </p>
+            <a href="#" class="learn-more-btn">Discover Our Legacy</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8;">
+                    Fighter Forces Academy is Pakistan's premier institution for military test preparation, helping thousands of students achieve their dreams of serving in the armed forces.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Join Army</a></li>
+                    <li><a href="#">Join Navy</a></li>
+                    <li><a href="#">Join PAF</a></li>
+                    <li><a href="#">ISSB Preparation</a></li>
+                    <li><a href="#">Cadet Colleges</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Practice Tests</a></li>
+                    <li><a href="#">Past Papers</a></li>
+                    <li><a href="#">PDF Notes</a></li>
+                    <li><a href="#">Video Lectures</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>📞 WhatsApp: 03348480890</li>
+                    <li>📧 Email: info@fighterforcesacademy.com</li>
+                    <li>📍 Location: Pakistan</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fighter Forces Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" onclick="scrollToTop()" id="scrollTopBtn">↑</div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // Auto Slide Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Scroll to Top Functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/Hide Scroll Button
+        window.addEventListener('scroll', () => {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
