@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fighter Forces Academy: Pakistan Army, Navy, PAF Test Preparation 2026</title>
-    <meta name="description" content="Free online preparation for Pak Army, Navy and PAF initial tests, ISSB, PMA Long Course, Cadet College admissions at Fighter Forces Academy. Practice MCQs, past papers & notes.">
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23001f3f'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EFF%3C/text%3E%3C/svg%3E">
+    <title>Fighter Forces Academy | Premier Military Preparation</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* CSS Reset and Base Styles */
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-navy: #001f3f;      /* Deep Navy Blue */
+            --secondary-navy: #003366;    /* Lighter Navy */
+            --accent-blue: #0074D9;       /* Bright Blue for highlights */
+            --white: #ffffff;
+            --light-gray: #f4f7f6;
+            --text-dark: #333333;
+            --text-light: #e0e0e0;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --navy-blue: #001f3f;
-            --navy-light: #003366;
-            --navy-dark: #00152a;
-            --white: #ffffff;
-            --off-white: #f8fafc;
-            --gray-light: #e2e8f0;
-            --gray: #64748b;
-            --accent-blue: #0066cc;
+            font-family: 'Poppins', sans-serif;
         }
 
         html {
@@ -30,469 +34,448 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: var(--navy-blue);
-            background-color: var(--white);
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
 
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 31, 63, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--navy-blue);
-        }
-
-        .header-main {
+        /* --- TOP BAR --- */
+        .top-bar {
+            background-color: var(--secondary-navy);
+            color: var(--white);
+            padding: 8px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .logo-section {
+        .top-info span { margin-right: 15px; }
+        .top-social a { margin-left: 10px; color: var(--white); transition: var(--transition); }
+        .top-social a:hover { color: var(--accent-blue); }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--primary-navy);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .navbar {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            padding: 15px 5%;
+            height: 80px;
         }
 
         .logo {
-            width: 60px;
-            height: 60px;
-            background: var(--navy-blue);
-            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i { color: var(--accent-blue); }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links li { position: relative; }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            padding: 10px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-blue);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover { color: var(--accent-blue); }
+
+        .mobile-toggle {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        #home {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 31, 63, 0.7), rgba(0, 31, 63, 0.7)), 
+                        url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        .site-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy-blue);
-        }
-
-        .site-title:hover {
-            color: var(--accent-blue);
-        }
-
-        /* Navigation */
-        nav ul {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        nav ul li {
-            position: relative;
-        }
-
-        nav ul li a {
-            padding: 10px 15px;
-            display: block;
-            color: var(--navy-blue);
-            font-weight: 500;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background: var(--navy-blue);
-            color: var(--white);
-        }
-
-        /* Dropdown Menu */
-        nav ul li ul {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--white);
-            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.2);
-            min-width: 250px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            flex-direction: column;
-            gap: 0;
-            z-index: 999;
-            border: 1px solid var(--gray-light);
-        }
-
-        nav ul li:hover ul {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        nav ul li ul li a {
-            padding: 12px 20px;
-            border-bottom: 1px solid var(--gray-light);
-        }
-
-        nav ul li ul li:last-child a {
-            border-bottom: none;
-        }
-
-        nav ul li ul li ul {
-            left: 100%;
-            top: 0;
-        }
-
-        /* Mobile Menu Toggle */
-        .mobile-menu-toggle {
-            display: none;
-            background: var(--navy-blue);
-            color: var(--white);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--navy-light) 100%);
-            color: var(--white);
-            padding: 80px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: var(--white);
+            padding: 0 20px;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
+        .hero-content h1 {
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease;
         }
 
-        .hero p {
+        .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.3s backwards;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Admission Banner */
-        .admission-banner {
-            background: #cc0000;
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-blue);
             color: var(--white);
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border: 2px solid var(--accent-blue);
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-navy);
+        }
+
+        /* --- ADMISSION CARDS --- */
+        #admissions {
+            padding: 80px 5%;
+            background-color: var(--white);
+        }
+
+        .section-title {
             text-align: center;
-            padding: 10px 20px;
-            font-weight: bold;
-            animation: pulse 2s infinite;
+            margin-bottom: 50px;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
         }
 
-        /* Main Cards Section */
-        .main-cards {
-            padding: 60px 20px;
-            background: var(--off-white);
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            margin: 10px auto 0;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        .card-item {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 31, 63, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .card-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 31, 63, 0.2);
-        }
-
-        .card-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--navy-blue), var(--navy-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: var(--white);
-            border: 4px solid var(--gray-light);
-            transition: all 0.3s ease;
-        }
-
-        .card-item:hover .card-icon {
-            border-color: var(--navy-blue);
-            transform: scale(1.1);
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--navy-blue);
-        }
-
-        /* Info Slider Section */
-        .info-slider {
-            padding: 60px 20px;
-            background: var(--white);
-        }
-
-        .slider-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: var(--white);
+        .card {
+            background: var(--light-gray);
             border-radius: 10px;
-            box-shadow: 0 5px 30px rgba(0, 31, 63, 0.15);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-navy);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-img img { transform: scale(1.1); }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h3 {
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card-body p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* --- INFO SLIDER / NOTICES --- */
+        #notices {
+            padding: 60px 5%;
+            background-color: var(--primary-navy);
+            color: var(--white);
+            position: relative;
             overflow: hidden;
         }
 
-        .slide {
-            display: none;
-            padding: 40px;
+        .slider-container {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .slide h2 {
-            color: var(--navy-blue);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .slide-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .slide-item {
-            background: var(--off-white);
-            padding: 20px;
-            border-radius: 8px;
-            border-bottom: 3px solid var(--navy-blue);
-            font-weight: 600;
-            color: var(--navy-blue);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #25D366;
-            color: var(--white);
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #1ebc57;
-            transform: scale(1.05);
-        }
-
-        /* Why Join Section */
-        .why-join {
-            padding: 80px 20px;
-            background: var(--off-white);
-        }
-
-        .why-join-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 31, 63, 0.1);
-            border-left: 6px solid var(--navy-blue);
-            transition: all 0.3s ease;
-        }
-
-        .why-join-content:hover {
-            transform: translateX(10px);
-            border-left-color: var(--accent-blue);
-        }
-
-        .why-join h2 {
-            color: var(--navy-blue);
-            font-size: 2.3rem;
-            margin-bottom: 25px;
             position: relative;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .why-join h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-blue);
-            margin-top: 15px;
+        .slide {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            width: 100%;
         }
 
-        .why-join p {
-            color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            text-align: justify;
+        .slide.active { opacity: 1; }
+
+        .slide h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--accent-blue); }
+        .slide p { font-size: 1.1rem; line-height: 1.6; }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
         }
 
-        .learn-more-btn {
-            display: inline-block;
-            background: var(--navy-blue);
-            color: var(--white);
-            padding: 15px 40px;
-            border-radius: 5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
         }
 
-        .learn-more-btn:hover {
-            background: var(--accent-blue);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0, 31, 63, 0.3);
+        .dot.active { background-color: var(--accent-blue); }
+
+        /* --- WHY JOIN US --- */
+        #why-join {
+            padding: 80px 5%;
+            background-color: var(--light-gray);
         }
 
-        /* Footer */
-        footer {
-            background: var(--navy-blue);
-            color: var(--white);
-            padding: 50px 20px 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--accent-blue);
-            padding-bottom: 10px;
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
         }
 
-        .footer-section ul li {
+        .feature-item:hover { transform: translateY(-5px); }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .feature-text h4 {
+            color: var(--primary-navy);
+            font-size: 1.2rem;
             margin-bottom: 10px;
         }
 
-        .footer-section ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
+        .feature-text p { color: #555; font-size: 0.95rem; }
+
+        /* --- GALLERY --- */
+        #gallery {
+            padding: 80px 5%;
+            background-color: var(--white);
         }
 
-        .footer-section ul li a:hover {
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 31, 63, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .overlay { opacity: 1; }
+        .overlay i { color: var(--white); font-size: 2rem; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-navy);
             color: var(--white);
-            padding-left: 5px;
+            padding: 60px 5% 20px;
         }
 
-        .footer-bottom {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-blue);
+        }
+
+        .footer-col p { color: #ccc; margin-bottom: 15px; font-size: 0.9rem; }
+        
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #ccc; transition: var(--transition); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--accent-blue); padding-left: 5px; }
+
+        .contact-info li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        .contact-info i { color: var(--accent-blue); margin-top: 4px; }
+
+        .copyright {
             text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.85rem;
         }
 
-        /* Scroll to Top Button */
-        .scroll-top {
+        /* --- SCROLL TO TOP --- */
+        #scrollTop {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--navy-blue);
+            background-color: var(--accent-blue);
             color: var(--white);
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -500,431 +483,397 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             z-index: 999;
-            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
+        #scrollTop.show { opacity: 1; visibility: visible; }
+        #scrollTop:hover { background-color: var(--primary-navy); transform: translateY(-5px); }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .scroll-top:hover {
-            background: var(--accent-blue);
-            transform: translateY(-5px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            nav ul {
-                gap: 2px;
-            }
-
-            nav ul li a {
-                padding: 8px 10px;
-                font-size: 0.9rem;
-            }
-        }
-
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
+            .top-bar { display: none; }
+            
+            .mobile-toggle { display: block; }
 
-            nav {
-                display: none;
+            .nav-links {
                 position: absolute;
-                top: 100%;
+                top: 80px;
                 left: 0;
-                right: 0;
-                background: var(--white);
-                padding: 20px;
-                box-shadow: 0 5px 15px rgba(0, 31, 63, 0.1);
-            }
-
-            nav.active {
-                display: block;
-            }
-
-            nav ul {
+                width: 100%;
+                background-color: var(--primary-navy);
                 flex-direction: column;
-                gap: 0;
+                align-items: center;
+                padding: 20px 0;
+                gap: 20px;
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
             }
 
-            nav ul li a {
-                padding: 15px;
-                border-bottom: 1px solid var(--gray-light);
-            }
+            .nav-links.active { transform: translateY(0); }
 
-            nav ul li ul {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                padding-left: 20px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .slide-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-join-content {
-                padding: 30px;
-            }
-
-            .why-join h2 {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-main {
-                padding: 10px 15px;
-            }
-
-            .logo {
-                width: 45px;
-                height: 45px;
-                font-size: 18px;
-            }
-
-            .site-title {
-                font-size: 1.2rem;
-            }
-
-            .hero {
-                padding: 50px 15px;
-                margin-top: 70px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .card-item {
-                padding: 20px 10px;
-            }
-
-            .card-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 28px;
-            }
-
-            .slide-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Utility Classes */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--navy-blue);
-            margin-bottom: 50px;
-        }
-
-        .highlight {
-            color: var(--accent-blue);
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; }
+            
+            .btn { display: block; width: 100%; margin: 10px 0 0 0; }
+            .btn-outline { margin-left: 0; }
         }
     </style>
 </head>
 <body>
-    <!-- Admission Banner -->
-    <div class="admission-banner">
-        🚨 Admissions Open for Next Session: Join us for cadet colleges test preparation on First May 2026 🚨
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-envelope"></i> info@fighterforces.edu.pk</span>
+            <span><i class="fas fa-phone-alt"></i> +92 300 1234567</span>
+        </div>
+        <div class="top-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
     </div>
 
-    <!-- Header -->
+    <!-- Navigation -->
     <header>
-        <div class="header-main">
-            <div class="logo-section">
-                <div class="logo">FF</div>
-                <a href="#" class="site-title">Fighter Forces Academy</a>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                FIGHTER FORCES ACADEMY
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#notices">Notices</a></li>
+                <li><a href="#why-join">Why Join</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
             </div>
-            
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-            
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li>
-                        <a href="#">Join Army ▼</a>
-                        <ul>
-                            <li><a href="#">PMA Long Course</a></li>
-                            <li><a href="#">Technical Cadet Course</a></li>
-                            <li><a href="#">Armed Forces Nursing Services</a></li>
-                            <li><a href="#">Army Medical Corps</a></li>
-                            <li><a href="#">Direct Short Service Commission</a></li>
-                            <li><a href="#">Lady Cadet Course</a></li>
-                            <li><a href="#">Army Education Officers</a></li>
-                            <li><a href="#">EME Officers</a></li>
-                            <li><a href="#">Army Legal Branch</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Join Navy ▼</a>
-                        <ul>
-                            <li><a href="#">Navy PC Officers</a></li>
-                            <li><a href="#">Navy Officers SSC</a></li>
-                            <li><a href="#">Navy M Cadet</a></li>
-                            <li><a href="#">General Sailors</a></li>
-                            <li><a href="#">Technical Sailors</a></li>
-                            <li><a href="#">Marine Sailors</a></li>
-                            <li><a href="#">Navy Civilian Jobs</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Join PAF ▼</a>
-                        <ul>
-                            <li><a href="#">General Duty Pilot (GDP)</a></li>
-                            <li><a href="#">Aeronautical Engineering</a></li>
-                            <li><a href="#">Air Defence Branch</a></li>
-                            <li><a href="#">Engineering Branch</a></li>
-                            <li><a href="#">Legal Branch</a></li>
-                            <li><a href="#">Account Branch</a></li>
-                            <li><a href="#">Logistic Branch</a></li>
-                            <li><a href="#">Education Branch</a></li>
-                            <li><a href="#">Medical Officers</a></li>
-                            <li><a href="#">IT Branch</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">ISSB ▼</a>
-                        <ul>
-                            <li><a href="#">Complete ISSB Test Guide</a></li>
-                            <li><a href="#">Psychological Tests</a></li>
-                            <li><a href="#">Group Testing Officer Tests</a></li>
-                            <li><a href="#">Interview Questions</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Colleges</a></li>
-                    <li><a href="#">Quizzes</a></li>
-                    <li><a href="#">PDFs</a></li>
-                    <li><a href="#">Videos</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Blogs</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home">
         <div class="hero-content">
-            <h1>Free Online Preparation for Pak Army, Navy and PAF Tests 2026</h1>
-            <p>Whether you aim to serve in the <strong>Pakistani Armed Forces</strong>, <strong>Civil Services</strong>, <strong>Cadet Colleges</strong> or pursue a career in leadership, Fighter Forces Academy is the first step towards achieving your goals.</p>
+            <h1>Prepare For Glory</h1>
+            <p>The premier institution for Pakistan Army, Navy, and Air Force initial test preparation. Join the ranks of the elite with Fighter Forces Academy.</p>
+            <a href="#admissions" class="btn">Apply Now</a>
+            <a href="#why-join" class="btn btn-outline">Learn More</a>
         </div>
     </section>
 
-    <!-- Main Cards Section -->
-    <section class="main-cards">
+    <!-- Admissions Section -->
+    <section id="admissions">
+        <div class="section-title">
+            <h2>Our Programs</h2>
+            <p>Comprehensive preparation for all armed forces entry tests</p>
+        </div>
         <div class="cards-grid">
-            <a href="#" class="card-item">
-                <div class="card-icon">🎖️</div>
-                <h3 class="card-title">Join Pak Army</h3>
-            </a>
-            <a href="#" class="card-item">
-                <div class="card-icon">⚓</div>
-                <h3 class="card-title">Join Pak Navy</h3>
-            </a>
-            <a href="#" class="card-item">
-                <div class="card-icon">✈️</div>
-                <h3 class="card-title">Join Pak Air Force</h3>
-            </a>
-            <a href="#" class="card-item">
-                <div class="card-icon">📋</div>
-                <h3 class="card-title">ISSB Tests</h3>
-            </a>
-            <a href="#" class="card-item">
-                <div class="card-icon">🏫</div>
-                <h3 class="card-title">Cadet Colleges</h3>
-            </a>
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1595590424283-b8f17842773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Army Prep">
+                </div>
+                <div class="card-body">
+                    <h3>Pakistan Army</h3>
+                    <p>Complete preparation for Cadet College, Long Course, and Technical Cadet Course. Physical training and academic excellence combined.</p>
+                    <a href="#" class="card-btn">View Details <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1569691105751-88df003de7a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Navy Prep">
+                </div>
+                <div class="card-body">
+                    <h3>Pakistan Navy</h3>
+                    <p>Specialized coaching for PN Cadet College, Supply Branch, and Operation Branch. Master the intelligence and academic tests.</p>
+                    <a href="#" class="card-btn">View Details <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="PAF Prep">
+                </div>
+                <div class="card-body">
+                    <h3>Pakistan Air Force</h3>
+                    <p>Rigorous training for GD Pilot, Aeronautical Engineering, and Admin & Special Duty branches. High success rate in initial tests.</p>
+                    <a href="#" class="card-btn">View Details <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ISSB Prep">
+                </div>
+                <div class="card-body">
+                    <h3>ISSB Preparation</h3>
+                    <p>Realistic ISSB environment simulation. Psychological tests, group tasks, and interview techniques to boost your confidence.</p>
+                    <a href="#" class="card-btn">View Details <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Info Slider Section -->
-    <section class="info-slider">
+    <!-- Notices / Slider Section -->
+    <section id="notices">
+        <div class="section-title">
+            <h2 style="color: white;">Latest Updates</h2>
+        </div>
         <div class="slider-container">
             <div class="slide active">
-                <h2>Welcome to Fighter Forces Academy</h2>
-                <p>Prep for Sargodha, Jhelum, Hasanabdal, Lower Topa, Ormara & SUI</p>
-                <div class="slide-item" style="background: var(--navy-blue); color: white; display: inline-block; margin-top: 20px; border: none;">
-                    New Session Starts: 1st of Every Month
-                </div>
+                <h3>Admissions Open 2024</h3>
+                <p>Fighter Forces Academy is now accepting applications for the upcoming batch. Early bird discount available until end of month.</p>
             </div>
-            
             <div class="slide">
-                <h2>Core Subjects</h2>
-                <div class="slide-grid">
-                    <div class="slide-item">🧠 Intelligence</div>
-                    <div class="slide-item">📚 English</div>
-                    <div class="slide-item">➗ Mathematics</div>
-                    <div class="slide-item">🔬 Science</div>
-                    <div class="slide-item">✍️ Urdu</div>
-                    <div class="slide-item">🎤 Interview</div>
-                </div>
+                <h3>New ISSB Facility</h3>
+                <p>We have inaugurated a state-of-the-art ISSB testing facility with modern obstacles and psychological assessment rooms.</p>
             </div>
-            
             <div class="slide">
-                <h2>Expert Mentors</h2>
-                <p>Retired Forces Officers Team</p>
-                <div class="slide-grid">
-                    <div class="slide-item">Personality Profiling</div>
-                    <div class="slide-item">Weekly Mock Tests</div>
-                    <div class="slide-item">Google Meet Classes</div>
-                    <div class="slide-item" style="grid-column: span 3; background: var(--navy-blue); color: white;">📝 Free Online Practice Tests</div>
-                </div>
+                <h3>Result Announcement</h3>
+                <p>Congratulations to our 150+ students who successfully cleared the initial tests for PAF GD Pilot this cycle.</p>
             </div>
-            
-            <div class="slide">
-                <h2>Join Now</h2>
-                <p>3 Months Course | 10,000 PKR/Month</p>
-                <p style="color: #1e5631; font-weight: 800; margin-top: 15px;">🎁 10% DISCOUNT ON FULL ADVANCE PAYMENT</p>
-                <a href="https://wa.me/923348480890" class="cta-button" target="_blank">📲 Contact at WhatsApp: 03348480890</a>
+            <div class="slider-controls">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
             </div>
         </div>
     </section>
 
     <!-- Why Join Section -->
-    <section class="why-join">
-        <div class="why-join-content">
-            <h2>Why to Join Fighter Forces Academy?</h2>
-            <p>
-                With years of success in preparing cadets for entry into the <strong>Pakistani Armed Forces</strong> and other elite institutions, Fighter Forces Academy has built a strong reputation for excellence. Our alumni have gone on to become successful officers, leaders, and role models in various sectors. The Fighter Forces Academy legacy is one of pride, dedication, and achievement.
-            </p>
-            <a href="#" class="learn-more-btn">Discover Our Legacy</a>
+    <section id="why-join">
+        <div class="section-title">
+            <h2>Why Choose Us</h2>
+            <p>The ultimate platform for your military career aspirations</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="feature-text">
+                    <h4>Expert Instructors</h4>
+                    <p>Learn from retired officers and subject specialists with years of experience in military selection processes.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+                <div class="feature-text">
+                    <h4>Physical Training</h4>
+                    <p>Dedicated PT sessions to ensure you meet the rigorous physical standards required by the armed forces.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                <div class="feature-text">
+                    <h4>Comprehensive Material</h4>
+                    <p>Exclusive study materials, past papers, and intelligent test guides designed specifically for Pak Forces.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-medal"></i></div>
+                <div class="feature-text">
+                    <h4>Proven Track Record</h4>
+                    <p>Hundreds of successful selections in Army, Navy, and Air Force over the last decade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Academy Gallery</h2>
+            <p>Glimpses of our training sessions and campus life</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1579912036026-c8847596a907?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery 1">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery 2">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery 3">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gallery 4">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p style="color: rgba(255,255,255,0.8); line-height: 1.8;">
-                    Fighter Forces Academy is Pakistan's premier institution for military test preparation, helping thousands of students achieve their dreams of serving in the armed forces.
-                </p>
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Fighter Forces Academy</h3>
+                <p>Dedicated to producing high-quality candidates for the Pakistan Armed Forces. Your journey to wearing the uniform starts here.</p>
+                <div class="top-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            
-            <div class="footer-section">
+            <div class="footer-col">
                 <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Join Army</a></li>
-                    <li><a href="#">Join Navy</a></li>
-                    <li><a href="#">Join PAF</a></li>
-                    <li><a href="#">ISSB Preparation</a></li>
-                    <li><a href="#">Cadet Colleges</a></li>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#admissions">Admission Procedure</a></li>
+                    <li><a href="#notices">Latest Notices</a></li>
+                    <li><a href="#why-join">Success Stories</a></li>
+                    <li><a href="#">Online Test</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Practice Tests</a></li>
-                    <li><a href="#">Past Papers</a></li>
-                    <li><a href="#">PDF Notes</a></li>
-                    <li><a href="#">Video Lectures</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
+            <div class="footer-col">
                 <h3>Contact Us</h3>
-                <ul>
-                    <li>📞 WhatsApp: 03348480890</li>
-                    <li>📧 Email: info@fighterforcesacademy.com</li>
-                    <li>📍 Location: Pakistan</li>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Main GT Road, Near Cantt Gate, Rawalpindi, Pakistan</li>
+                    <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+                    <li><i class="fas fa-envelope"></i> admissions@fighterforces.edu.pk</li>
+                    <li><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 9:00 PM</li>
                 </ul>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Fighter Forces Academy. All Rights Reserved.</p>
+        <div class="copyright">
+            <p>&copy; 2024 Fighter Forces Academy. All Rights Reserved. Designed with Pride.</p>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top" onclick="scrollToTop()" id="scrollTopBtn">↑</div>
+    <!-- Scroll To Top Button -->
+    <div id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
+    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const nav = document.getElementById('main-nav');
-            nav.classList.toggle('active');
-        }
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
 
-        // Auto Slide Functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Sticky Header & Active Link Highlighter on Scroll
+        const header = document.querySelector('header');
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            // Scroll to Top Button Visibility
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+
+            // Active Section Highlighting
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
                 }
             });
-        }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
+            navItems.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
 
-        // Change slide every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Scroll to Top Functionality
-        function scrollToTop() {
+        // Scroll To Top Functionality
+        scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Info Slider Logic
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const slideInterval = 5000; // 5 seconds
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
         }
 
-        // Show/Hide Scroll Button
-        window.addEventListener('scroll', () => {
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        });
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+        // Auto rotate slides
+        let slideTimer = setInterval(nextSlide, slideInterval);
+
+        // Manual dot click
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideTimer);
+                showSlide(index);
+                slideTimer = setInterval(nextSlide, slideInterval);
             });
         });
+
+        // Pause slider on hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(slideTimer));
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideTimer = setInterval(nextSlide, slideInterval);
+        });
+
     </script>
 </body>
 </html>
